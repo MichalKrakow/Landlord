@@ -172,7 +172,7 @@ class TenantManager
                         $id = $this->getTenants()->first();
                     }
 
-                    $builder->where($model->getQualifiedTenant($tenant), '=', $id);
+                    $builder->whereIn($model->getQualifiedTenant($tenant),  [$id,0]);
                 });
             });
         });
